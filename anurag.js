@@ -281,6 +281,12 @@ checkPetrol(120)
     console.log(error);
 });
 
+for(var i = 0; i < 2; i++) {
+    setTimeout(function (){
+        console.log("Set Time   ");
+        
+    })
+}
 
 
 
