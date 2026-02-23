@@ -1,11 +1,30 @@
-loadData() async {
-  // Simulate a delay to mimic data loading
-  await Future.delayed(Duration(seconds: 2));
-  return "Sample Data";
+class Vehicle {
+  String brand;
+  int wheels;
+
+  Vehicle(this.brand, this.wheels);
+
+  void printVehicleInfo() {
+    print("Brand: $brand");
+    print("Wheels: $wheels");
+  }
 }
 
-void main() async {
-  print("Loading data...");
-  String data = await loadData();
-  print("Data loaded: $data");
+class Car extends Vehicle {
+  String model;
+  int speed;
+
+  Car(String brand, this.model, this.speed)
+      : super(brand, 4);
+
+  void printCarInfo() {
+    printVehicleInfo();
+    print("Model: $model");
+    print("Top Speed: $speed km/h");
+  }
+}
+
+void main() {
+  Car myCar = Car("Toyota", "Supra", 250);
+  myCar.printCarInfo();
 }
